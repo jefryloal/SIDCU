@@ -1,0 +1,13 @@
+package com.example.repository;
+
+import com.example.;
+import com.example.repository.impl.GenericRepositoryImpl;
+
+import jakarta.persistence.EntityManager;
+
+public class InteresRepository extends GenericRepositoryImpl<Estudiante, Long> {
+    public EstudianteRepository(EntityManager em) {
+        super(em, Estudiante.class);
+    } {
+
+}

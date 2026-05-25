@@ -1,0 +1,25 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="miUnidadPersistencia">
+
+        <class>com.example.Estudiante</class>
+        <class>com.example.Carrera</class>
+        <class>com.example.Universidad</class>
+        <class>com.example.Interes</class>
+        <class>com.example.UniversidadCarrera</class>
+        <class>com.example.InteresUniversidad</class>
+        <class>com.example.TestVocacional</class>
+
+        <properties>
+           
+            <!-- Configuración Hibernate -->
+            <property name=\"hibernate.dialect\" value=\"org.hibernate.dialect.SQLServerDialect\"/>
+            
+            <!-- hbm2ddl.auto: 'update' crea o modifica las tablas automáticamente según tus clases -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            
+            <!-- Muestra el SQL que Hibernate genera internamente en la consola -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

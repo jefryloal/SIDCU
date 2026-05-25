@@ -1,0 +1,16 @@
+com\example\Universidad.class
+com\example\Main.class
+com\example\Carrera.class
+com\example\repository\CarreraRepository.class
+com\example\repository\Repository.class
+com\example\repository\UniversidadCarreraRepository.class
+com\example\repository\UniversidadRepository.class
+com\example\Estudiante.class
+com\example\Interes.class
+com\example\UniversidadCarrera.class
+com\example\repository\EstudianteRepository.class
+com\example\repository\InteresUniversidadRepository.class
+com\example\repository\InteresRepository.class
+com\example\InteresUniversidad.class
+com\example\repository\impl\GenericRepositoryImpl.class
+com\example\util\JpaUtil.class

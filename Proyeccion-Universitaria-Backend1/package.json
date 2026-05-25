@@ -1,0 +1,17 @@
+{
+  "name": "proyeccion-universitaria-prisma",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prisma": "prisma",
+    "prisma:generate": "prisma generate",
+    "prisma:db:pull": "prisma db pull",
+    "seed": "node seed.js"
+  },
+  "devDependencies": {
+    "prisma": "^5.19.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.0"
+  }
+}

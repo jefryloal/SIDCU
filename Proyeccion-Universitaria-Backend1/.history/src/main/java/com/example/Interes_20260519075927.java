@@ -1,0 +1,83 @@
+package com.example;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "interes")
+public class Interes {
+
+    @EmbeddedId
+    private InteresId id;
+
+    @ManyToOne
+    @MapsId("idestudiante")
+    @JoinColumn(name = "idestudiante")
+    private Estudiante estudiante;
+
+    @ManyToOne
+    @MapsId("idcarrera")
+    @JoinColumn(name = "idcarrera")
+    private Carrera carrera;
+
+    @Column(name = "fecha_interes")
+    private LocalDate fechaInteres;
+
+    // ──── Constructor ──────────────────────────────────────────────────
+    public Interes() {
+        this.fechaInteres = LocalDate.now();
+    }
+
+    public Interes(Estudiante estudiante, Carrera carrera) {
+        this.estudiante = estudiante;
+        this.carrera = carrera;
+        this.id = new InteresId(estudiante.getId(), carrera.getIdcarrera());
+        this.fechaInteres = LocalDate.now();
+    }
+
+    // ──── Getters y Setters ────────────────────────────────────────────
+    public InteresId getId() {
+        return id;
+    }
+
+    public void setId(InteresId id) {
+        this.id = id;
+    }
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public Carrera getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
+    }
+
+    public LocalDate getFechaInteres() {
+        return fechaInteres;
+    }
+
+    public void setFechaInteres(LocalDate fechaInteres) {
+        this.fechaInteres = fechaInteres;
+    }
+
+    @Override
+    public String toString() {
+        return "Interes{id=" + id + ", estudiante='" + estudiante.getNombre()
+                + "', carrera='" + carrera.getNombre() + "', fecha='" + fechaInteres + "'}";
+    }
+}

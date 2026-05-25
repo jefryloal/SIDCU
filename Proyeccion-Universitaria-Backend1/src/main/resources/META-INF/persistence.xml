@@ -1,0 +1,29 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="miUnidadPersistencia">
+
+        <class>com.example.Estudiante</class>
+        <class>com.example.Carrera</class>
+        <class>com.example.Universidad</class>
+        <class>com.example.Interes</class>
+        <class>com.example.InteresUniversidad</class>
+        <class>com.example.UniversidadCarrera</class>
+
+        <properties>
+            <!-- Parámetros de Conexión (PostgreSQL Prisma) -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://db.prisma.io:5432/postgres?sslmode=require"/>
+            <property name="jakarta.persistence.jdbc.user" value="ff86c843257fcc91d3bb01fcb6a9d36c71d3a15209db073009ff0880cb9aecb2"/>
+            <property name="jakarta.persistence.jdbc.password" value="sk_tDoS5manw-BMKOxSvrQgt"/>
+
+            <!-- Configuración Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            
+            <!-- hbm2ddl.auto: 'update' crea o modifica las tablas automáticamente según tus clases -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            
+            <!-- Muestra el SQL que Hibernate genera internamente en la consola -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
